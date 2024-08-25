@@ -23,19 +23,19 @@
                     <form id="add-book-form">
                         <div id="author-name" class="box">
                             <label for="author">Author's Name:</label>
-                            <input id="author" name="author" type="text" pattern="[a-zA-Z]+">
+                            <input id="author" name="author" type="text" pattern="[a-zA-Z]+" required>
                         </div>
                         <div id="title-book" class="box">
                             <label for="title">Title of the Book:</label>
-                            <input id="title" name="title" type="text">
+                            <input id="title" name="title" type="text" required>
                         </div>
                         <div id="no-page" class="box">
                             <label for="pages">Pages:</label>
-                            <input id="pages" name="pages" type="number" min="0">
+                            <input id="pages" name="pages" type="number" min="0" required>
                         </div>
                         <div id="read" class="box">
                             <label for="readn">Read:</label>
-                            <input id="readn" name="readn" type="checkbox">
+                            <input id="readn" name="readn" type="checkbox" required>
                         </div>
                         <div id="add-conf">
                             <button id="add-co-btn">Add</button>
