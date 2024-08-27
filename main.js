@@ -35,7 +35,7 @@ function renderBook(){
             authorP.innerText = `Author Name : ${book.author}`;
             titleP.innerText = `Title of the Book : ${book.title}`;
             pagesP.innerText = `Pages Read : ${book.pages}`;
-            readP.innerText = `Read or not :`;
+            readP.innerText = `Read Status :`;
             readState.innerText = `${(book.read)?"Yes":"No"}`;
             deleteB.innerText = "Delete";
             deleteB.addEventListener("click", ()=>{
