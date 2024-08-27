@@ -15,6 +15,11 @@ function Book(author, title, pages, read, index){
     this.read = read;
     this.index = index;
     this.domE = null;
+    this.readState = null;
+    this.toggleState = ()=>{
+        this.read = !this.read;
+        this.readState.innerText = `${(this.read)?"Yes":"No"}`;
+    }
 }
 
 function renderBook(){
@@ -25,24 +30,31 @@ function renderBook(){
             let titleP = document.createElement("p");
             let pagesP = document.createElement("p");
             let readP = document.createElement("p");
+            let readState = document.createElement("p");
             let deleteB = document.createElement("button");
             authorP.innerText = `Author Name : ${book.author}`;
             titleP.innerText = `Title of the Book : ${book.title}`;
             pagesP.innerText = `Pages Read : ${book.pages}`;
-            readP.innerText = `Read or not : ${book.read}`;
+            readP.innerText = `Read or not :`;
+            readState.innerText = `${(book.read)?"Yes":"No"}`;
             deleteB.innerText = "Delete";
             deleteB.addEventListener("click", ()=>{
                 bookList.splice(book.index, 1);
                 books.removeChild(book.domE);
                 renderBook();
             });
+            readState.addEventListener("click", book.toggleState);
+            readState.setAttribute("class", "statebtn");
+            deleteB.style.backgroundColor = "blue";
             bookDom.setAttribute("class", "book");
             bookDom.appendChild(authorP);
             bookDom.appendChild(titleP);
             bookDom.appendChild(pagesP);
+            readP.appendChild(readState);
             bookDom.appendChild(readP);
             bookDom.appendChild(deleteB);
             book.domE = bookDom;
+            book.readState = readState;
             books.appendChild(book.domE);
         }
     }
@@ -64,4 +76,3 @@ addConf.addEventListener("click", (event)=>{
     event.preventDefault();
     dialog.close();
 });
-

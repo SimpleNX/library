@@ -58,10 +58,17 @@ button{
 }
 
 .book{
-    background-color: lightblue;
+    background-color: brown;
     color : white;
     margin : 10px;
     border : 4px solid black;
     border-radius: 5px;
     padding : 10px;
+}
+
+.statebtn{
+    display: inline;
+    border : 2px solid white;
+    background-color: blue;
+    cursor: pointer;
 }
